@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 
 // Load up express function into app
 const app = express()
+const port = process.env.PORT || 3000
 
 // Must use ABSOLUTE path to serve up public folder with public assets, rather than relative (ie '../')
 // console.log(__dirname)
@@ -134,6 +135,6 @@ app.get('*', (req, res) => {
 
 // Start server up using listen method, using 3000 port (only works on local)
 // Plus callback to launch when server is listening
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
